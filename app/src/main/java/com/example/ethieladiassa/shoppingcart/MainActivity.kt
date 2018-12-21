@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
 
         swipeRefreshLayout.isRefreshing = true
 
+        swipeRefreshLayout.setOnRefreshListener {
+            getProducts()
+        }
 
 //        val layoutManager = StaggeredGridLayoutManager(this, Lin)
 
@@ -59,12 +62,15 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
 
                 swipeRefreshLayout.isRefreshing = false
+//                swipeRefreshLayout.isEnabled = false
+
                 products = response.body()!!
 
                 productAdapter = ProductAdapter(this@MainActivity, products)
 
                 products_recyclerview.adapter = productAdapter
-                productAdapter.notifyDataSetChanged()
+
+//                productAdapter.notifyDataSetChanged()
 
 
             }

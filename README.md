@@ -2,7 +2,7 @@
 
 A shopping cart with Kotlin
 
-![application screenshot](app/src/main/res/drawable/demo.jpg "A shopping cart with Kotlin.")
+![application screenshot](app/src/main/res/drawable/demo.gif "A shopping cart with Kotlin.")
 
 
 ## Getting Started
