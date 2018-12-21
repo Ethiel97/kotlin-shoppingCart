@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="4dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="4dp"
+        android:background="?attr/selectableItemBackground"
+        app:cardElevation="3dp"
+        android:foreground="?attr/selectableItemBackground"
+        card_view:cardElevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"/>
+
+        <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="12dp"
+                    android:id="@+id/product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            <TextView
+                    android:textSize="19sp"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <ImageButton
+                android:id="@+id/addToCart"
+                android:paddingHorizontal="16dp"
+                android:tint="@android:color/white"
+                android:paddingVertical="4dp"
+                android:src="@drawable/ic_add_shopping"
+                android:layout_gravity="end"
+                android:background="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:targetApi="o"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
