@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="1.5dp"
+        android:layout_margin="2dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:weightSum="1.5"
+            android:layout_height="match_parent">
+
+
+        <ImageView
+                android:layout_weight=".5"
+                android:scaleType="fitXY"
+                android:id="@+id/product_image"
+                android:layout_width="170dp"
+                android:layout_height="135dp"/>
+
+
+        <LinearLayout
+                android:layout_weight=".5"
+                android:gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp">
+
+
+            <TextView
+                    android:textSize="19sp"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            <TextView
+                    android:layout_marginTop="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:id="@+id/product_price"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+        <TextView
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:padding="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:background="@drawable/round_background"
+                android:id="@+id/product_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+

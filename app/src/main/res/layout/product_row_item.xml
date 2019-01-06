@@ -4,7 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardUseCompatPadding="true"
-        android:layout_margin="4dp"
+        android:layout_margin="2dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="4dp"
         android:background="?attr/selectableItemBackground"
@@ -22,9 +22,11 @@
         <ImageView
                 android:id="@+id/product_image"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"/>
+                android:layout_height="180dp"/>
 
         <LinearLayout
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:padding="10dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -42,23 +44,43 @@
 
             <TextView
                     android:textSize="19sp"
-                    android:textColor="@android:color/black"
                     android:id="@+id/product_price"
+                    android:textColor="@android:color/holo_red_light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <ImageButton
-                android:id="@+id/addToCart"
-                android:paddingHorizontal="16dp"
-                android:tint="@android:color/white"
-                android:paddingVertical="4dp"
-                android:src="@drawable/ic_add_shopping"
+
+        <LinearLayout
                 android:layout_gravity="end"
-                android:background="@color/colorAccent"
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                card_view:targetApi="o"/>
+                android:layout_height="wrap_content">
+
+            <ImageButton
+                    android:id="@+id/removeItem"
+                    android:layout_width="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:tint="@android:color/white"
+                    android:paddingVertical="4dp"
+                    android:src="@drawable/ic_remove_shopping_cart"
+                    android:background="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    card_view:targetApi="o"/>
+
+            <ImageButton
+                    android:id="@+id/addToCart"
+                    android:paddingHorizontal="16dp"
+                    android:tint="@android:color/white"
+                    android:paddingVertical="4dp"
+                    android:src="@drawable/ic_add_shopping"
+                    android:background="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    card_view:targetApi="o"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
