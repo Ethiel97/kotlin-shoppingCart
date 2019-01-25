@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         products_recyclerview.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
 
-//        cart_size.text = ShoppingCart.getShoppingCartSize().toString()
+        cart_size.text = ShoppingCart.getShoppingCartSize().toString()
 
         getProducts()
 
