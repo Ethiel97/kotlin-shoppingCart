@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-
         setSupportActionBar(toolbar)
         apiService = APIConfig.getRetrofitClient(this).create(APIService::class.java)
 
@@ -35,29 +34,25 @@ class MainActivity : AppCompatActivity() {
 
         swipeRefreshLayout.isRefreshing = true
 
-        swipeRefreshLayout.setOnRefreshListener {
-            getProducts()
-        }
-
 //        val layoutManager = StaggeredGridLayoutManager(this, Lin)
 
         products_recyclerview.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
 
-        cart_size.text = ShoppingCart.getShoppingCartSize().toString()
+//        cart_size.text = ShoppingCart.getShoppingCartSize().toString()
 
         getProducts()
 
 
-        showCart.setOnClickListener {
+        /*showCart.setOnClickListener {
 
             startActivity(Intent(this, ShoppingCartActivity::class.java))
-        }
+        }*/
 
     }
 
 
-    fun getProducts() {
+    private fun getProducts() {
 
         apiService.getProducts().enqueue(object : retrofit2.Callback<List<Product>> {
             override fun onFailure(call: Call<List<Product>>, t: Throwable) {
@@ -71,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
 
                 swipeRefreshLayout.isRefreshing = false
-//                swipeRefreshLayout.isEnabled = false
+                swipeRefreshLayout.isEnabled = false
 
                 products = response.body()!!
 
@@ -79,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
                 products_recyclerview.adapter = productAdapter
 
-//                productAdapter.notifyDataSetChanged()
+                productAdapter.notifyDataSetChanged()
 
             }
 
