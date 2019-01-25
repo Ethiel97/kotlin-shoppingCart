@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.squareup.picasso.Picasso
-//import io.reactivex.Observable
-//import io.reactivex.ObservableOnSubscribe
+import io.reactivex.Observable
+import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.product_row_item.view.*
 
@@ -52,60 +52,58 @@ class ProductAdapter(var context: Context, var products: List<Product> = arrayLi
 //                ShoppingCart.addItem(item)
 
 
-//            Observable.create(ObservableOnSubscribe<MutableList<CartItem>> {
+            Observable.create(ObservableOnSubscribe<MutableList<CartItem>> {
 
-            itemView.addToCart.setOnClickListener { view ->
+                itemView.addToCart.setOnClickListener { view ->
 
-                val item = CartItem(product)
+                    val item = CartItem(product)
 
-                ShoppingCart.addItem(item)
-                //notify users
-                Snackbar.make(
-                    (itemView.context as MainActivity).coordinator,
-                    "${product.name} added to your cart",
-                    Snackbar.LENGTH_LONG
-                ).show()
+                    ShoppingCart.addItem(item)
+                    //notify users
+                    Snackbar.make(
+                        (itemView.context as MainActivity).coordinator,
+                        "${product.name} added to your cart",
+                        Snackbar.LENGTH_LONG
+                    ).show()
 
-//                    it.onNext(ShoppingCart.getCart())
+                    it.onNext(ShoppingCart.getCart())
 
-            }
+                }
 
-            itemView.removeItem.setOnClickListener { view ->
+                itemView.removeItem.setOnClickListener { view ->
 
-                val item = CartItem(product)
+                    val item = CartItem(product)
 
-                ShoppingCart.removeItem(item, itemView.context)
+                    ShoppingCart.removeItem(item, itemView.context)
 
-                Snackbar.make(
-                    (itemView.context as MainActivity).coordinator,
-                    "${product.name} removed from your cart",
-                    Snackbar.LENGTH_LONG
-                ).show()
-//                    it.onNext(ShoppingCart.getCart())
+                    Snackbar.make(
+                        (itemView.context as MainActivity).coordinator,
+                        "${product.name} removed from your cart",
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                    it.onNext(ShoppingCart.getCart())
 
-            }
-
-
-//            }).subscribe { cart ->
-
-            /*var quantity = 0
-
-            cart.forEach { cartItem ->
-
-                quantity += cartItem.quantity
-            }
+                }
 
 
-            (itemView.context as MainActivity).cart_size.text = quantity.toString()
-            Toast.makeText(itemView.context, "Cart size $quantity", Toast.LENGTH_SHORT).show()
-*/
+            }).subscribe { cart ->
+
+                var quantity = 0
+
+                cart.forEach { cartItem ->
+
+                    quantity += cartItem.quantity
+                }
+
+                (itemView.context as MainActivity).cart_size.text = quantity.toString()
+                Toast.makeText(itemView.context, "Cart size $quantity", Toast.LENGTH_SHORT).show()
 
 //            }
 //                Toast.makeText(itemView.context, "${product.name} added to your cart", Toast.LENGTH_SHORT).show()
 
 
+            }
+
         }
 
     }
-
-}
