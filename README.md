@@ -10,7 +10,7 @@ Make sure you have Android Studio on your machine
 
 1.  Clone this repository and cd into it
 2.  Run the project with Android Studio
-3.  See the [tutorial](https://pusher.com/tutorials/live-map-lealfet-vue-adonis) for useful notes 
+3.  See the [tutorial](https://pusher.com/tutorials/shopping-cart-kotlin-part-1) for useful notes 
 
 ### Prerequisites
 
