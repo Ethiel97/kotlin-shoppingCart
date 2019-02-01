@@ -35,9 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         swipeRefreshLayout.isRefreshing = true
 
-        swipeRefreshLayout.setOnRefreshListener {
-            getProducts()
-        }
 
 //        val layoutManager = StaggeredGridLayoutManager(this, Lin)
 
